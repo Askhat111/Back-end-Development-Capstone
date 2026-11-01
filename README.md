@@ -1,11 +1,23 @@
-# Back-end Capstone: Django
+# Back-end-Development-Capstone
 
-This repository contains the full application source in `source.zip`, with its original directories, tests, templates and assets preserved. Extract with `python -m zipfile -e source.zip .` to inspect or run the source locally.
+Djirection band website with Django — IBM Back-end Application Development Capstone Project.
 
-The root Dockerfile extracts this same source archive during the build. Build using `docker build -t capstone-django .`.
+Public repository: https://github.com/Askhat111/Back-end-Development-Capstone
 
-The implementation builds on the IBM Developer Skills Network course starter. Original license notices are preserved. CRUD, validation and error handling were completed for the capstone.
+Direct README URL: https://github.com/Askhat111/Back-end-Development-Capstone/blob/main/README.md
 
-Testing recorded locally: Pictures 11 supplied pytest tests passed; Songs 4 tests passed against mongomock (a test double, not a live MongoDB server); Django 4 functional tests passed. Cloud deployment evidence is tracked separately and is not claimed by these local test results.
+## Source and execution
 
-Configuration: Songs reads MONGODB_URI. Django reads SONGS_API_URL, PICTURES_API_URL, DJANGO_ALLOWED_HOSTS and DJANGO_SECRET_KEY. Do not commit credentials. No default administrator credentials are provided.
+Full application source, original directories, tests, templates and assets are in `source.zip`. Extract with `python -m zipfile -e source.zip .`, then install `requirements.txt`. The root Dockerfile extracts this source during the build. Original IBM Developer Skills Network starter attribution and license notices are preserved.
+
+## Verified results
+
+Docker image built and pushed to the lab registry; deployment applied with kubectl and rollout completed. Home, Songs, Lyrics modal, Photos and the Django Admin login page were checked in the browser. Songs and Photos use the deployed APIs. Database migrations were executed. No default administrator password is published.
+
+Deployment: https://djangoserver-sn-labs-donnanelsonu.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud
+
+Validation date: 2026-11-01. These are temporary Skills Network lab deployments and may expire with the lab session. Terminal outputs and browser screenshots are separate submission evidence.
+
+## Configuration
+
+Songs uses `MONGODB_URI` or `MONGODB_SERVICE` and `MONGODB_PORT`. Django uses `SONGS_API_URL`, `PICTURES_API_URL`, `DJANGO_ALLOWED_HOSTS`, `DJANGO_SECRET_KEY`, `DJANGO_CSRF_TRUSTED_ORIGINS` and `DJANGO_TRUST_PROXY_HEADERS`. Only enable proxy-header trust behind the trusted deployment ingress. Do not commit credentials.
